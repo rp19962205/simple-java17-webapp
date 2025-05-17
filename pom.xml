@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -16,7 +16,7 @@
     </properties>
 
     <dependencies>
-        <!-- Servlet API (provided by Tomcat) -->
+        <!-- Jakarta Servlet API -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -27,5 +27,14 @@
 
     <build>
         <finalName>sample</finalName>
+
+        <plugins>
+            <!-- Use modern maven-war-plugin compatible with Java 17 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+            </plugin>
+        </plugins>
     </build>
 </project>
